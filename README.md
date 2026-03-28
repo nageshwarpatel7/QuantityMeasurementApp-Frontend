@@ -117,4 +117,4 @@ Open index.html in browser
 - API Integration without frameworks  
 - Code modularization in JavaScript  
 
----
+--- 
