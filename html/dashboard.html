@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <h2 class="logo">Quantity Measurement</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Unit Type Selection -->
+            <section class="section">
+                <h3 class="section-title">CHOOSE TYPE</h3>
+                <div class="type-grid">
+                    <div class="type-card active" onclick="setType('LengthUnit', this)">
+                        <div class="icon-circle length">📏</div>
+                        <span>Length</span>
+                    </div>
+                    <div class="type-card" onclick="setType('WeightUnit', this)">
+                        <div class="icon-circle weight">⚖️</div>
+                        <span>Weight</span>
+                    </div>
+                    <div class="type-card" onclick="setType('TemperatureUnit', this)">
+                        <div class="icon-circle temp">🌡️</div>
+                        <span>Temperature</span>
+                    </div>
+                    <div class="type-card" onclick="setType('VolumeUnit', this)">
+                        <div class="icon-circle volume">🥤</div>
+                        <span>Volume</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Selection -->
+            <section class="section">
+                <h3 class="section-title">CHOOSE ACTION</h3>
+                <div class="action-grid">
+                    <button class="action-btn" onclick="setAction('compare', this)">Comparison</button>
+                    <button class="action-btn" onclick="setAction('convert', this)">Conversion</button>
+                    <button class="action-btn active" onclick="setAction('arithmetic', this)">Arithmetic</button>
+                </div>
+            </section>
+
+            <!-- Calculator Card -->
+            <div class="calculator-card">
+                <div class="calculator-header">
+                    <span id="calc-title">Perform Operation</span>
+                </div>
+                
+                <div class="calculator-body">
+                    <div class="input-block">
+                        <label>Value 1</label>
+                        <div class="input-inner">
+                            <input type="number" id="value1" value="1.0">
+                            <select id="unit1"></select>
+                        </div>
+                    </div>
+
+                    <div class="operator-block">
+                        <select id="operator-select" class="op-dropdown" onchange="updateSelectedAction()">
+                            <option value="add">+</option>
+                            <option value="subtract">-</option>
+                            <option value="divide">/</option>
+                        </select>
+                        <div id="operator-static" class="op-static" style="display:none;">→</div>
+                    </div>
+
+                    <div class="input-block">
+                        <label>Value 2</label>
+                        <div class="input-inner">
+                            <input type="number" id="value2" value="1.0">
+                            <select id="unit2"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">View Result</button>
+
+                <!-- Result Box -->
+                <div id="result-box" class="result-box" style="display:none;">
+                    <div class="result-label">RESULT</div>
+                    <div class="result-value-container">
+                        <h2 id="result-text" class="result-number">0.00</h2>
+                        <span id="result-unit-label" class="result-unit">Unit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

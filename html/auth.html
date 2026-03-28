@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <!-- Left Panel: Illustration -->
+            <div class="illustration-panel">
+                <div class="circle-bg">
+                    <svg width="240" height="240" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="250" cy="250" r="230" fill="#e0f2f1"/>
+                        <path d="M250 150 V350" stroke="#00796b" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M250 350 H200 M250 350 H300" stroke="#00796b" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M150 200 H350" stroke="#00796b" stroke-width="12" stroke-linecap="round" fill="none"/>
+                        <path d="M150 200 L130 300 H170 Z" fill="#4db6ac"/>
+                        <path d="M350 200 L330 300 H370 Z" fill="#4db6ac"/>
+                        <rect x="120" y="380" width="260" height="40" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+                        <path d="M140 380 V400 M170 380 V390 M200 380 V400 M230 380 V390 M260 380 V400" stroke="#00796b" stroke-width="2"/>
+                        <rect x="400" y="150" width="20" height="150" fill="#ffffff" stroke="#d32f2f" stroke-width="4" rx="10"/>
+                        <circle cx="410" cy="300" r="25" fill="#d32f2f"/>
+                        <rect x="406" y="240" width="8" height="60" fill="#d32f2f"/>
+                    </svg>
+                </div>
+                <h2 class="app-title">QUANTITY MEASUREMENT</h2>
+            </div>
+
+            <!-- Right Panel: Forms -->
+            <div class="auth-card">
+                <div class="choose-option">
+                    <button id="login-tab" class="active" onclick="showLoginForm()">Login</button>
+                    <button id="signup-tab" onclick="showSignupForm()">Signup</button>
+                </div>
+
+                <div id="login-box" class="login-box">
+                    <form id="formLogin">
+                        <div class="f-group">
+                            <label>Email</label>
+                            <input type="email" required placeholder="Enter Email Address">
+                        </div>
+                        <div class="f-group">
+                            <label>Password</label>
+                            <input type="password" required placeholder="Enter Password">
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                        <h5 id="text-mid"><span>Or</span></h5>
+                        <button type="button" class="google-btn">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G"> Sign in with Google
+                        </button>
+                        <p style="text-align:center; margin-top:20px;">New user? <span id="btn-choice" onclick="showSignupForm()">Signup</span></p>
+                    </form>
+                </div>
+
+                <div id="signup-box" class="signup-box" style="display: none;">
+                    <form id="formSignup">
+                        <div class="f-group">
+                            <label>Username</label>
+                            <input type="text" id="username" required placeholder="Full Name">
+                        </div>
+                        <div class="f-group">
+                            <label>Email</label>
+                            <input type="email" id="email" required placeholder="Email Address">
+                        </div>
+                        <div class="f-group">
+                            <label>Password</label>
+                            <input type="password" id="password" required placeholder="Password">
+                        </div>
+                        <div class="f-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" required placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="submit-btn">Create Account</button>
+                        <h5 id="text-mid"><span>Or</span></h5>
+                        <button type="button" class="google-btn">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G"> Sign in with Google
+                        </button>
+                        <p style="text-align:center; margin-top:20px;">Already have an account? <span id="btn-choice" onclick="showLoginForm()">Login</span></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>
