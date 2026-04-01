@@ -55,66 +55,78 @@ UI Update
 
 ---
 
-## 🌐 Branch: `feature/frontend-vanilla-html-css-js`
+## ⚡ Branch: `feature/frontend-angular`
 
 ### 🎯 Objective
 
-Build the application using **core web technologies** to strengthen fundamentals and understand low-level UI handling.
+Build a **scalable and maintainable frontend** using Angular with TypeScript.
 
 ---
 
 ### 🛠️ Tech Stack
 
-- HTML5  
-- CSS3 (Flexbox, Grid)  
-- JavaScript (ES6+)  
-- JSON Server (Mock Backend)  
+- Angular  
+- TypeScript  
+- RxJS  
+- Angular CLI  
+- REST APIs  
 
 ---
 
 ### 📁 Project Structure
 
 ```
-frontend/
+src/
 │
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   ├── app.js
-│   ├── api.js
-│   └── utils.js
-└── data/
-    └── db.json
+├── app/
+│   ├── components/
+│   ├── services/
+│   ├── models/
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+│
+├── assets/
+└── environments/
 ```
 
 ---
 
 ### ✨ Features
 
-- 📏 Unit Conversion UI  
-- 🔄 Dynamic DOM Updates  
-- 🌐 API Integration (Fetch)  
-- 🎯 Input Validation  
-- 📱 Responsive Design  
+- ⚡ Component-Based Architecture  
+- 🔄 Reactive Programming (RxJS)  
+- 📏 Unit Conversion System  
+- 🌐 API Integration  
+- 🧩 Modular Design  
 
 ---
 
 ### 🚀 How to Run
 
 ```
-git checkout feature/frontend-vanilla-html-css-js
-npx json-server --watch data/db.json --port 3000
-Open index.html in browser
+git checkout feature/frontend-angular
+npm install
+ng serve
+Open http://localhost:4200
 ```
 
 ---
 
 ### 🔥 Key Learnings
 
-- DOM Manipulation  
-- Event Handling  
-- API Integration without frameworks  
-- Code modularization in JavaScript  
+- Component-based UI design  
+- Service-layer architecture  
+- Reactive programming with Observables  
+- Scalable frontend structure  
+
+---
+
+# 📌 Future Enhancements
+
+- 🔐 Authentication Integration (JWT / OAuth2)  
+- 🛡️ Route Guards (Angular)  
+- 🎨 UI Improvements (Material / Tailwind)  
+- ⚡ Performance Optimization  
+- 📦 State Management (NgRx)  
 
 ---
