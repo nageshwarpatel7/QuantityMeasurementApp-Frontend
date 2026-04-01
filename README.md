@@ -55,78 +55,66 @@ UI Update
 
 ---
 
-## ⚡ Branch: `feature/frontend-angular`
+## 🌐 Branch: `feature/frontend-vanilla-html-css-js`
 
 ### 🎯 Objective
 
-Build a **scalable and maintainable frontend** using Angular with TypeScript.
+Build the application using **core web technologies** to strengthen fundamentals and understand low-level UI handling.
 
 ---
 
 ### 🛠️ Tech Stack
 
-- Angular  
-- TypeScript  
-- RxJS  
-- Angular CLI  
-- REST APIs  
+- HTML5  
+- CSS3 (Flexbox, Grid)  
+- JavaScript (ES6+)  
+- JSON Server (Mock Backend)  
 
 ---
 
 ### 📁 Project Structure
 
 ```
-src/
+frontend/
 │
-├── app/
-│   ├── components/
-│   ├── services/
-│   ├── models/
-│   ├── app-routing.module.ts
-│   └── app.module.ts
-│
-├── assets/
-└── environments/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   ├── api.js
+│   └── utils.js
+└── data/
+    └── db.json
 ```
 
 ---
 
 ### ✨ Features
 
-- ⚡ Component-Based Architecture  
-- 🔄 Reactive Programming (RxJS)  
-- 📏 Unit Conversion System  
-- 🌐 API Integration  
-- 🧩 Modular Design  
+- 📏 Unit Conversion UI  
+- 🔄 Dynamic DOM Updates  
+- 🌐 API Integration (Fetch)  
+- 🎯 Input Validation  
+- 📱 Responsive Design  
 
 ---
 
 ### 🚀 How to Run
 
 ```
-git checkout feature/frontend-angular
-npm install
-ng serve
-Open http://localhost:4200
+git checkout feature/frontend-vanilla-html-css-js
+npx json-server --watch data/db.json --port 3000
+Open index.html in browser
 ```
 
 ---
 
 ### 🔥 Key Learnings
 
-- Component-based UI design  
-- Service-layer architecture  
-- Reactive programming with Observables  
-- Scalable frontend structure  
-
----
-
-# 📌 Future Enhancements
-
-- 🔐 Authentication Integration (JWT / OAuth2)  
-- 🛡️ Route Guards (Angular)  
-- 🎨 UI Improvements (Material / Tailwind)  
-- ⚡ Performance Optimization  
-- 📦 State Management (NgRx)  
+- DOM Manipulation  
+- Event Handling  
+- API Integration without frameworks  
+- Code modularization in JavaScript  
 
 ---
