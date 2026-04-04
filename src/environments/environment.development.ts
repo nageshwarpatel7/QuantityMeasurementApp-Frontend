@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  gatewayUrl: 'http://localhost:8080',
+  gatewayUrl: 'https://quantitymeasurementapp-production-e4e2.up.railway.app',
   googleClientId: '572314407201-7u2slqlg4137j7ke26n2qqte517lat7c.apps.googleusercontent.com',
-  googleRedirectUri: 'http://localhost:4200/auth'
+  googleRedirectUri: 'https://quantitymeasurementapp-production-e4e2.up.railway.app/auth'
 };
