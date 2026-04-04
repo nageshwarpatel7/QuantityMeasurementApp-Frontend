@@ -1,0 +1,99 @@
+<header class="header">
+    <div class="header-container">
+        <h2 class="logo">Quantity Measurement</h2>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+</header>
+
+<main class="dashboard-main">
+    <div class="dashboard-container">
+        <!-- Error Message -->
+        <div *ngIf="error" class="error-message">
+            {{ error }}
+        </div>
+
+        <!-- Unit Type Selection -->
+        <section class="section">
+            <h3 class="section-title">CHOOSE TYPE</h3>
+            <div class="type-grid">
+                <div class="type-card" [class.active]="selectedType === 'LengthUnit'" (click)="setType('LengthUnit')">
+                    <div class="icon-circle length">📏</div>
+                    <span>Length</span>
+                </div>
+                <div class="type-card" [class.active]="selectedType === 'WeightUnit'" (click)="setType('WeightUnit')">
+                    <div class="icon-circle weight">⚖️</div>
+                    <span>Weight</span>
+                </div>
+                <div class="type-card" [class.active]="selectedType === 'TemperatureUnit'" (click)="setType('TemperatureUnit')">
+                    <div class="icon-circle temp">🌡️</div>
+                    <span>Temperature</span>
+                </div>
+                <div class="type-card" [class.active]="selectedType === 'VolumeUnit'" (click)="setType('VolumeUnit')">
+                    <div class="icon-circle volume">🥤</div>
+                    <span>Volume</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Selection -->
+        <section class="section">
+            <h3 class="section-title">CHOOSE ACTION</h3>
+            <div class="action-grid">
+                <button class="action-btn" [class.active]="selectedAction === 'compare'" (click)="setAction('compare')">Comparison</button>
+                <button class="action-btn" [class.active]="selectedAction === 'convert'" (click)="setAction('convert')">Conversion</button>
+                <button class="action-btn" [class.active]="isArithmeticMode" (click)="setAction('add')">Arithmetic</button>
+            </div>
+        </section>
+
+        <!-- Calculator Card -->
+        <div class="calculator-card">
+            <div class="calculator-header">
+                <span id="calc-title">Perform Operation</span>
+            </div>
+            
+            <div class="calculator-body">
+                <div class="input-block">
+                    <label>Value 1</label>
+                    <div class="input-inner">
+                        <input type="number" [(ngModel)]="calc.val1" placeholder="0">
+                        <select [(ngModel)]="calc.unit1">
+                            <option *ngFor="let unit of units[selectedType]" [value]="unit">{{unit}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="operator-block">
+                    <select *ngIf="isArithmeticMode" [(ngModel)]="calc.operator" class="op-dropdown" (change)="setAction(calc.operator)">
+                        <option value="add">+</option>
+                        <option value="subtract">-</option>
+                        <option value="divide">/</option>
+                    </select>
+                    <div *ngIf="!isArithmeticMode" class="op-static">
+                        {{ selectedAction === 'compare' ? 'VS' : '→' }}
+                    </div>
+                </div>
+
+                <div class="input-block">
+                    <label>Value 2</label>
+                    <div class="input-inner">
+                        <input type="number" [(ngModel)]="calc.val2" placeholder="0">
+                        <select [(ngModel)]="calc.unit2">
+                            <option *ngFor="let unit of units[selectedType]" [value]="unit">{{unit}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button class="calculate-btn" (click)="calculate()">View Result</button>
+
+            <!-- Result Box -->
+            <div *ngIf="resultBox" class="result-box">
+                <div class="result-label">RESULT</div>
+                <div class="result-value-container">
+                    <h2 class="result-number">{{ resultBox.value }}</h2>
+                    <span *ngIf="!resultBox.isComparison" class="result-unit">{{ resultBox.unit }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
